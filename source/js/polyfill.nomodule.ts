@@ -1,1 +1,5 @@
-const polo = 'nomo'
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+import 'element-closest'
+import 'picturefill'
+import 'picturefill/dist/plugins/intrinsic-dimension/pf.intrinsic.min.js'

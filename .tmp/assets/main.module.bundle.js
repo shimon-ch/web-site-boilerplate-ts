@@ -121,11 +121,6 @@
   \***************************/
       /*! no static exports found */
       /***/ function(module, exports) {
-        const x = 'hoge'
-        console.log(x)
-        var y = 'fuga'
-        console.log(y)
-
         /***/
       },
 
@@ -135,8 +130,6 @@
   \**************************************/
       /*! no static exports found */
       /***/ function(module, exports) {
-        const maskpaois = 'adsada'
-
         /***/
       },
 

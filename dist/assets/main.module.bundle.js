@@ -58,6 +58,5 @@
   function(e, t) {},
   function(e, t) {
     console.log('hoge')
-    console.log('fuga')
   },
 ])

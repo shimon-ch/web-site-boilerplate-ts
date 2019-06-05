@@ -1,1 +1,0 @@
-const maskpaois = 'adsada'

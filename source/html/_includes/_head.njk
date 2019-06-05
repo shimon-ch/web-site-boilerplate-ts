@@ -15,13 +15,12 @@
 {% endblock -%}
 {% block css -%}
 <link rel="canonical" href="">
-<link rel="stylesheet" href="/assets/font-reset.css">
+{# <link rel="stylesheet" href="/assets/font-reset.css"> #}
 <link rel="stylesheet" href="/assets/style.bundle.css">
 {% endblock -%}
 {% block js -%}
-<script src="/assets/main.module.bundle.js"></script>
-<!--  <script type="module" src="/assets/vendor.module.bundle.js"></script>-->
-<!--  <script type="module" src="/assets/main.module.bundle.js"></script>-->
-<!--  <script nomodule src="/assets/vendor.nomodule.bundle.js" defer></script>-->
-<!--  <script nomodule src="/assets/main.nomodule.bundle.js" defer></script>-->
+<script type="module" src="/assets/vendor.module.bundle.js"></script>
+<script type="module" src="/assets/main.module.bundle.js"></script>
+<script nomodule src="/assets/vendor.nomodule.bundle.js" defer></script>
+<script nomodule src="/assets/main.nomodule.bundle.js" defer></script>
 {% endblock -%}

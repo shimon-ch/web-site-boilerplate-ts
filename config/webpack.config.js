@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const LicenseBannerPlugin = require('license-banner-webpack-plugin')
-const pkg = require('../package.json')
 const { toPOSIXPath } = require('../lib/path')
 const { isDev } = require('./flag')
 const { basePath, assetsPath, destAssetsDir } = require('./path')
@@ -14,14 +13,23 @@ module.exports = ['module', 'nomodule'].map((type) => {
   return {
     mode: isDev ? 'development' : 'production',
     context: rootDir,
-    entry: [`./source/js/polyfill.${type}.ts`, `./source/js/main.ts`],
+    entry: [`./source/js/polyfill.${type}.ts`, './source/js/main.ts'],
     output: {
       path: path.join(rootDir, destAssetsDir),
       filename: `[name].${type}.bundle.js`,
       publicPath: toPOSIXPath(path.join('/', assetsPath, '/')),
     },
-    resolve: {
-      extensions: ['.ts'],
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendor',
+            chunks: 'initial',
+            enforce: true,
+          },
+        },
+      },
     },
     module: {
       rules: [
@@ -31,23 +39,22 @@ module.exports = ['module', 'nomodule'].map((type) => {
           use: {
             loader: 'babel-loader',
             options: {
+              babelrc: false,
               presets: [
                 [
                   '@babel/preset-env',
                   {
-                    targets: isTypeModule
-                      ? {
-                          esmodules: true,
-                        }
-                      : {
-                          // Googlebot uses a web rendering service that is based on Chrome 41.
-                          // https://developers.google.com/search/docs/guides/rendering
-                          browsers: [...pkg.browserslist, 'Chrome 41'],
-                        },
+                    targets: isTypeModule ? { esmodules: true } : {},
                     useBuiltIns: 'usage',
                     corejs: 3,
                   },
                 ],
+                '@babel/preset-typescript',
+              ],
+              plugins: [
+                '@babel/plugin-proposal-class-properties',
+                '@babel/plugin-proposal-object-rest-spread',
+                '@babel/plugin-syntax-dynamic-import',
               ],
               cacheDirectory: true,
             },

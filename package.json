@@ -11,9 +11,10 @@
     "build": "gulp build --prod"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
+    "core-js": "^3.1.3",
     "element-closest": "^3.0.1",
-    "picturefill": "^3.0.3"
+    "picturefill": "^3.0.3",
+    "regenerator-runtime": "^0.13.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -31,7 +32,6 @@
     "fibers": "^4.0.1",
     "gulp": "^4.0.2",
     "gulp-data": "^1.3.1",
-    "gulp-ejs": "^4.0.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
