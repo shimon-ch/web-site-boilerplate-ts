@@ -1,5 +1,5 @@
-# macOS
-.DS_Store
+# .tmp/
+.tmp
 
 # IDEs and Editors
 .vscode
