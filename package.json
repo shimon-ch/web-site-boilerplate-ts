@@ -19,9 +19,9 @@
   "devDependencies": {
     "@babel/core": "^7.5.0",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.2",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-env": "^7.5.2",
     "@babel/preset-typescript": "^7.3.3",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
@@ -38,7 +38,7 @@
     "gulp-sass": "^4.0.2",
     "husky": "^3.0.0",
     "import-fresh": "^3.1.0",
-    "js-yaml": "^3.13.1",
+    "js-yaml": "3.13.1",
     "license-banner-webpack-plugin": "^2.2.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.uniqby": "^4.7.0",
@@ -53,8 +53,8 @@
     "replace-ext": "^1.0.0",
     "sass": "^1.22.3",
     "through2": "^3.0.1",
-    "typescript": "^3.5.2",
-    "webpack": "^4.35.2"
+    "typescript": "^3.5.3",
+    "webpack": "^4.35.3"
   },
   "engines": {
     "node": ">=8.9.0"
