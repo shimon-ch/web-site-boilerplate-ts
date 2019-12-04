@@ -6,7 +6,7 @@ const magicImporter = require('node-sass-magic-importer')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const gapProperties = require('postcss-gap-properties')
-const csswring = require('csswring')
+const cssnano = require('cssnano')
 const { isDev } = require('../config/flag')
 const { destAssetsDir } = require('../config/path')
 
@@ -18,7 +18,7 @@ const postcssPlugins = [
     grid: 'autoplace',
   }),
   gapProperties({ preserve: false }),
-  !isDev && csswring(),
+  !isDev && cssnano(),
 ].filter(Boolean)
 
 let isWatchMode = false
