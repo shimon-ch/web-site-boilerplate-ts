@@ -2,7 +2,6 @@
   "name": "web-site-boilerplate",
   "version": "1.0.0",
   "description": "web-site-boilerplate",
-  "main": "main.js",
   "repository": "https://github.com/shimooon/web-site-boilerplate",
   "license": "MIT",
   "private": true,
@@ -12,10 +11,14 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "cssnano": "^4.1.10",
+    "dom4": "^2.1.5",
     "element-closest": "^3.0.2",
+    "focus-visible": "^5.1.0",
+    "mutation-observer-inner-html-shim": "^1.0.1",
+    "normalize.css": "^8.0.1",
     "picturefill": "^3.0.3",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "unfetch": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -29,6 +32,7 @@
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-google": "^0.14.0",
@@ -46,6 +50,7 @@
     "import-fresh": "^3.2.1",
     "js-yaml": "3.13.1",
     "license-banner-webpack-plugin": "^2.2.0",
+    "lint-staged": "^10.2.2",
     "lodash.clonedeep": "^4.5.0",
     "lodash.uniqby": "^4.7.0",
     "mime": "^2.4.5",
@@ -55,7 +60,6 @@
     "plugin-error": "^1.0.1",
     "postcss-gap-properties": "^2.0.0",
     "prettier": "^2.0.5",
-    "pretty-quick": "^2.0.1",
     "replace-ext": "^2.0.0",
     "sass": "^1.26.5",
     "through2": "^3.0.1",
@@ -72,7 +76,11 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{json,yml,scss}": "prettier --write"
   }
 }
